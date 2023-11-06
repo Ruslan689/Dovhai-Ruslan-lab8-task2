@@ -1,2 +1,2 @@
-def  validate_board(board):
+def  validate_board(board: list) -> bool:
     pass
