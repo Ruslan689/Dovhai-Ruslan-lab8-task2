@@ -27,4 +27,27 @@ def  validate_board(board: list) -> bool:
                 col_chek.append(el_col)
             except ValueError:
                 continue
+
+    for i in range(5):
+        color_chek = []
+        for j in range(5):
+            try:
+                el_color = int(board[i + j][4 - i])
+                if el_color in color_chek:
+                    return False
+                color_chek.append(el_color)
+            except ValueError:
+                if j == 4:
+                    break
+            try:
+                el_color = int(board[4 + i][5 - i + j])
+                if el_color in color_chek:
+                    return False
+                color_chek.append(el_color)
+            except ValueError:
+                continue
+
     return True
+if __name__ == "__main__":
+    import doctest
+    print(doctest.testmod())
