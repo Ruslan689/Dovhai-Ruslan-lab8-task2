@@ -1,3 +1,7 @@
+"""
+prepare game
+"""
+
 def  validate_board(board: list) -> bool:
     """
     this function determines whether the puzzle board is ready for play
@@ -5,4 +9,22 @@ def  validate_board(board: list) -> bool:
 "     9 5 "," 6  83  *","3   1  **","  8  2***","  2  ****"])
     False
     """
-    pass
+    for i, line in enumerate(board):
+        row_chek = []
+        col_chek = []
+        for j, el_row in enumerate(line):
+            try:
+                el_row = int(el_row)
+                if el_row in row_chek:
+                    return False
+                row_chek.append(el_row)
+            except ValueError:
+                el_col = 0
+            try:
+                el_col = int(board[j][i])
+                if el_col in col_chek:
+                    return False
+                col_chek.append(el_col)
+            except ValueError:
+                continue
+    return True
