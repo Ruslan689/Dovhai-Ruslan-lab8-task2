@@ -36,6 +36,8 @@ def  validate_board(board: list) -> bool:
                 if el_color in color_chek:
                     return False
                 color_chek.append(el_color)
+                if j == 4:
+                    break
             except ValueError:
                 if j == 4:
                     break
