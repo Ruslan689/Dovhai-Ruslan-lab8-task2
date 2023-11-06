@@ -1,5 +1,5 @@
 """
-prepare game
+prepare game https://github.com/Ruslan689/Dovhai-Ruslan-lab8-task2
 """
 
 def  validate_board(board: list) -> bool:
